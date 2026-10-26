@@ -1,6 +1,5 @@
 package Entity;
 
-import java.io.Serializable;
 
 public class Periodoncista extends Odontologo{
     public Periodoncista(String nombre, String apellido, String matricula){

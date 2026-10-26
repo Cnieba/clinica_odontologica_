@@ -1,8 +1,7 @@
 package Entity;
 
-import java.io.Serializable;
 
-public enum EstadoTurno implements Serializable {
+public enum EstadoTurno {
     PENDIENTE,
     CONFIRMADO,
     CANCELADO,
