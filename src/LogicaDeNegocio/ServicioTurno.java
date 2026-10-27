@@ -15,9 +15,9 @@ import java.util.stream.Collectors;
 
 public class ServicioTurno {
 
-    private IRepositorio<Turno, Integer> repoTurno;
-    private IRepositorio<Paciente, String> repoPaciente;
-    private IRepositorio<Odontologo, String> repoOdonto;
+    private final IRepositorio<Turno, Integer> repoTurno;
+    private final IRepositorio<Paciente, String> repoPaciente;
+    private final IRepositorio<Odontologo, String> repoOdonto;
 
     public ServicioTurno(IRepositorio<Turno, Integer> repoTurno,
                          IRepositorio<Paciente, String> repoPaciente,

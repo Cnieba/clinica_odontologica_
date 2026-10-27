@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class ServicioOdonto {
 
-    private IRepositorio<Odontologo, String> repo;
+    private final IRepositorio<Odontologo, String> repo;
 
     public ServicioOdonto(IRepositorio<Odontologo, String> repo) {
         this.repo = repo;

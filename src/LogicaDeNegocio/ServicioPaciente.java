@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class ServicioPaciente {
 
-    private IRepositorio<Paciente, String> repo;
+    private final IRepositorio<Paciente, String> repo;
 
     public ServicioPaciente(IRepositorio<Paciente, String> repo) {
         this.repo = repo;
