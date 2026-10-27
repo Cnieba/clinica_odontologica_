@@ -1,0 +1,1151 @@
+<mxfile host="Electron">
+  <diagram name="Diagrama de Clases V6" id="sonrisa-feliz-v6">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c_Main" value="&lt;b&gt;Main&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#d5e8d4;" parent="1" vertex="1">
+          <mxGeometry x="765" y="110" width="170" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Main_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Main" vertex="1">
+          <mxGeometry x="0" y="28" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Main_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_Main" vertex="1">
+          <mxGeometry x="0" y="46" width="170" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Main_2" value="+ main(args : String[]) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_Main" vertex="1">
+          <mxGeometry x="0" y="54" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_MainFrame" value="«JFrame»&lt;br&gt;&lt;b&gt;MainFrame&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#d5e8d4;" parent="1" vertex="1">
+          <mxGeometry x="630" y="256" width="440" height="198" as="geometry" />
+        </mxCell>
+        <mxCell id="c_MainFrame_0" value="- contenidoPanel : JPanel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_MainFrame" vertex="1">
+          <mxGeometry x="0" y="42" width="440" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_MainFrame_1" value="- cardLayout : CardLayout" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_MainFrame" vertex="1">
+          <mxGeometry x="0" y="60" width="440" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_MainFrame_2" value="- pacientePanel : PacientePanel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_MainFrame" vertex="1">
+          <mxGeometry x="0" y="78" width="440" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_MainFrame_3" value="- odontologoPanel : OdontologoPanel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_MainFrame" vertex="1">
+          <mxGeometry x="0" y="96" width="440" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_MainFrame_4" value="- turnoPanel : TurnoPanel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_MainFrame" vertex="1">
+          <mxGeometry x="0" y="114" width="440" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_MainFrame_5" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_MainFrame" vertex="1">
+          <mxGeometry x="0" y="132" width="440" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_MainFrame_6" value="+ MainFrame(pc : PacienteController, oc : OdontologoController, tc : TurnoController)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_MainFrame" vertex="1">
+          <mxGeometry x="0" y="140" width="440" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_MainFrame_7" value="- crearNavegacion() : JPanel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_MainFrame" vertex="1">
+          <mxGeometry x="0" y="158" width="440" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_MainFrame_8" value="- crearBotonNav(texto : String) : JButton" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_MainFrame" vertex="1">
+          <mxGeometry x="0" y="176" width="440" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_BaseFormPanel" value="«abstract»&lt;br&gt;&lt;i&gt;&lt;b&gt;BaseFormPanel&lt;/b&gt;&lt;/i&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#d5e8d4;" parent="1" vertex="1">
+          <mxGeometry x="562" y="544" width="370" height="162" as="geometry" />
+        </mxCell>
+        <mxCell id="c_BaseFormPanel_0" value="# borderOriginal : Border" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_BaseFormPanel" vertex="1">
+          <mxGeometry x="0" y="42" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_BaseFormPanel_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_BaseFormPanel" vertex="1">
+          <mxGeometry x="0" y="60" width="370" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_BaseFormPanel_2" value="# inicializarBorder(campo : JTextField) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_BaseFormPanel" vertex="1">
+          <mxGeometry x="0" y="68" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_BaseFormPanel_3" value="# agregarCampo(panel, gbc, label : String, campo : JTextField) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_BaseFormPanel" vertex="1">
+          <mxGeometry x="0" y="86" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_BaseFormPanel_4" value="# marcarError(campo : JTextField) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_BaseFormPanel" vertex="1">
+          <mxGeometry x="0" y="104" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_BaseFormPanel_5" value="# resetBordes(campos : JTextField...) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_BaseFormPanel" vertex="1">
+          <mxGeometry x="0" y="122" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_BaseFormPanel_6" value="# enScrollPane(formulario : JPanel, ancho : int) : JScrollPane" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_BaseFormPanel" vertex="1">
+          <mxGeometry x="0" y="140" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel" value="&lt;b&gt;PacientePanel&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#d5e8d4;" parent="1" vertex="1">
+          <mxGeometry x="70" y="826" width="400" height="328" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_0" value="- controller : PacienteController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="28" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_1" value="- txtNombre, txtApellido, txtDni, txtEmail, txtBuscar : JTextField" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="46" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_2" value="- txtCalle, txtNumero, txtLocalidad, txtProvincia, txtCodigoPostal : JTextField" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="64" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_3" value="- tabla : JTable" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="82" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_4" value="- modelo : DefaultTableModel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="100" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_5" value="- dniSeleccionado : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="118" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="136" width="400" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_7" value="- agregarPaciente() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="144" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_8" value="- modificarPaciente() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="162" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_9" value="- eliminarPaciente() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="180" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_10" value="- buscarPorApellido() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="198" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_11" value="- cargarTabla(lista : List&amp;lt;Paciente&amp;gt;) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="216" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_12" value="- cargarEnFormulario(fila : int) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="234" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_13" value="- validarCampos() : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="252" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_14" value="- validarCamposDomicilio() : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="270" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_15" value="- marcarErroresDomicilio() : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="288" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacientePanel_16" value="- limpiarFormulario() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacientePanel" vertex="1">
+          <mxGeometry x="0" y="306" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel" value="«JPanel»&lt;br&gt;&lt;b&gt;TurnoPanel&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#d5e8d4;" parent="1" vertex="1">
+          <mxGeometry x="680" y="826" width="340" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_0" value="- controller : TurnoController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="42" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_1" value="- cmbPaciente, cmbOdontologo : JComboBox&amp;lt;String&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="60" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_2" value="- cmbEstado : JComboBox&amp;lt;EstadoTurno&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="78" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_3" value="- txtFecha, txtHora, txtFechaDesde, txtFechaHasta : JTextField" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="96" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_4" value="- txtBuscarDni, txtBuscarMatricula : JTextField" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="114" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_5" value="- tabla : JTable" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="132" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_6" value="- modelo : DefaultTableModel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="150" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_7" value="- idSeleccionado : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="168" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="186" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_9" value="+ refrescarCombos() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="194" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_10" value="- crearTurno() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="212" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_11" value="- modificarTurno() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="230" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_12" value="- eliminarTurno() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="248" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_13" value="- buscarPorRango() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="266" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_14" value="- buscarPorPaciente() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="284" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_15" value="- buscarPorOdontologo() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="302" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_16" value="- cargarTabla(lista : List&amp;lt;Turno&amp;gt;) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="320" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoPanel_17" value="- limpiarFormulario() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoPanel" vertex="1">
+          <mxGeometry x="0" y="338" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel" value="&lt;b&gt;OdontologoPanel&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#d5e8d4;" parent="1" vertex="1">
+          <mxGeometry x="1270" y="826" width="270" height="274" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_0" value="- controller : OdontologoController" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="28" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_1" value="- txtNombre, txtApellido, txtMatricula : JTextField" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="46" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_2" value="- cmbEspecialidad : JComboBox&amp;lt;String&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="64" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_3" value="- tabla : JTable" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="82" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_4" value="- modelo : DefaultTableModel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="100" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_5" value="- matriculaSeleccionada : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="118" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="136" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_7" value="- agregarOdontologo() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="144" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_8" value="- modificarOdontologo() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="162" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_9" value="- eliminarOdontologo() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="180" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_10" value="- cargarTabla(lista : List&amp;lt;Odontologo&amp;gt;) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="198" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_11" value="- cargarEnFormulario(fila : int) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="216" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_12" value="- validarCampos() : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="234" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoPanel_13" value="- limpiarFormulario() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoPanel" vertex="1">
+          <mxGeometry x="0" y="252" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController" value="&lt;b&gt;PacienteController&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="95" y="1276" width="350" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_0" value="- servicio : ServicioPaciente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="28" width="350" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="46" width="350" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_2" value="+ registrarPaciente(nombre, apellido, dni, email," style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="54" width="350" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_3" value="      calle, numero, localidad, provincia, codigoPostal : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="72" width="350" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_4" value="+ modificarPaciente(dni, nombre, apellido, email," style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="90" width="350" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_5" value="      calle, numero, localidad, provincia, codigoPostal : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="108" width="350" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_6" value="+ eliminarPaciente(dni : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="126" width="350" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_7" value="+ buscarPaciente(dni : String) : Paciente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="144" width="350" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_8" value="+ listarPacientes() : List&amp;lt;Paciente&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="162" width="350" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_9" value="+ buscarPorApellido(texto : String) : List&amp;lt;Paciente&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="180" width="350" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteController_10" value="+ esCodigoPostalValido(cp : String) : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteController" vertex="1">
+          <mxGeometry x="0" y="198" width="350" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController" value="&lt;b&gt;TurnoController&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="645" y="1276" width="410" height="256" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_0" value="- servTur : ServicioTurno" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="28" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_1" value="- servPac : ServicioPaciente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="46" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_2" value="- servOdo : ServicioOdonto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="64" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="82" width="410" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_4" value="+ crearTurno(dniPaciente, matriculaOdontologo, fecha, hora : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="90" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_5" value="+ modificarTurno(id : Integer, fecha, hora : String, estado : EstadoTurno) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="108" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_6" value="+ eliminarTurno(id : Integer) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="126" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_7" value="+ listarTurnos() : List&amp;lt;Turno&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="144" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_8" value="+ buscarPorRango(desde, hasta : String) : List&amp;lt;Turno&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="162" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_9" value="+ buscarPorPaciente(dni : String) : List&amp;lt;Turno&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="180" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_10" value="+ buscarPorOdontologo(matricula : String) : List&amp;lt;Turno&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="198" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_11" value="+ listarPacientes() : List&amp;lt;Paciente&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="216" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoController_12" value="+ listarOdontologos() : List&amp;lt;Odontologo&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoController" vertex="1">
+          <mxGeometry x="0" y="234" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoController" value="&lt;b&gt;OdontologoController&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="1276" width="410" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoController_0" value="- servicio : ServicioOdonto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoController" vertex="1">
+          <mxGeometry x="0" y="28" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoController_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_OdontologoController" vertex="1">
+          <mxGeometry x="0" y="46" width="410" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoController_2" value="+ registrarOdontologo(nombre, apellido, matricula, especialidad : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoController" vertex="1">
+          <mxGeometry x="0" y="54" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoController_3" value="+ modificarOdontologo(matricula, nombre, apellido : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoController" vertex="1">
+          <mxGeometry x="0" y="72" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoController_4" value="+ eliminarOdontologo(matricula : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoController" vertex="1">
+          <mxGeometry x="0" y="90" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoController_5" value="+ listarOdontologos() : List&amp;lt;Odontologo&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoController" vertex="1">
+          <mxGeometry x="0" y="108" width="410" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente" value="&lt;b&gt;ServicioPaciente&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#fff2cc;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1662" width="460" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_0" value="- repo : IRepositorio&amp;lt;Paciente, String&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="28" width="460" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="46" width="460" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_2" value="+ registrarPaciente(p : Paciente) : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="54" width="460" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_3" value="+ actualizarPaciente(dni, nombre, apellido, email : String, domicilio : Domicilio) : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="72" width="460" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_4" value="+ eliminarPaciente(dni : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="90" width="460" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_5" value="+ buscar(dni : String) : Paciente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="108" width="460" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_6" value="+ listar() : List&amp;lt;Paciente&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="126" width="460" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_7" value="+ buscarPorApellido(fragmento : String) : List&amp;lt;Paciente&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="144" width="460" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_8" value="- validarDatosPersonales(nombre, apellido, email : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="162" width="460" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_9" value="- validarDomicilio(d : Domicilio) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="180" width="460" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioPaciente_10" value="+ esCodigoPostalValido(cp : String) : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_ServicioPaciente" vertex="1">
+          <mxGeometry x="0" y="198" width="460" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno" value="&lt;b&gt;ServicioTurno&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#fff2cc;" parent="1" vertex="1">
+          <mxGeometry x="590" y="1662" width="520" height="274" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_0" value="- repoTurno : IRepositorio&amp;lt;Turno, Integer&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="28" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_1" value="- repoPaciente : IRepositorio&amp;lt;Paciente, String&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="46" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_2" value="- repoOdonto : IRepositorio&amp;lt;Odontologo, String&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="64" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="82" width="520" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_4" value="+ crearTurno(t : Turno) : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="90" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_5" value="+ buscar(id : Integer) : Turno" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="108" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_6" value="+ listar() : List&amp;lt;Turno&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="126" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_7" value="+ buscarPorRangoFechas(desde, hasta : LocalDate) : List&amp;lt;Turno&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="144" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_8" value="+ buscarPorOdontologo(matricula : String) : List&amp;lt;Turno&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="162" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_9" value="+ buscarPorPaciente(dni : String) : List&amp;lt;Turno&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="180" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_10" value="+ actualizarTurno(id : Integer, fecha : LocalDate, hora : LocalTime) : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="198" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_11" value="+ cambiarEstadoTurno(id : Integer, estado : EstadoTurno) : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="216" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_12" value="+ eliminar(id : Integer) : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="234" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioTurno_13" value="- verificarHorarioLibre(o : Odontologo, fecha : LocalDate, hora : LocalTime, idExcluido : Integer) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioTurno" vertex="1">
+          <mxGeometry x="0" y="252" width="520" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioOdonto" value="&lt;b&gt;ServicioOdonto&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#fff2cc;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="1662" width="370" height="148" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioOdonto_0" value="- repo : IRepositorio&amp;lt;Odontologo, String&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioOdonto" vertex="1">
+          <mxGeometry x="0" y="28" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioOdonto_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_ServicioOdonto" vertex="1">
+          <mxGeometry x="0" y="46" width="370" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioOdonto_2" value="+ registrarOdontologo(o : Odontologo) : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioOdonto" vertex="1">
+          <mxGeometry x="0" y="54" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioOdonto_3" value="+ buscar(matricula : String) : Odontologo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioOdonto" vertex="1">
+          <mxGeometry x="0" y="72" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioOdonto_4" value="+ listar() : List&amp;lt;Odontologo&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioOdonto" vertex="1">
+          <mxGeometry x="0" y="90" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioOdonto_5" value="+ actualizarOdontologo(matricula, nombre, apellido : String) : boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioOdonto" vertex="1">
+          <mxGeometry x="0" y="108" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ServicioOdonto_6" value="+ eliminar(matricula : String) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ServicioOdonto" vertex="1">
+          <mxGeometry x="0" y="126" width="370" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_IRepositorio" value="«interface»&lt;br&gt;&lt;b&gt;IRepositorio&amp;lt;T, ID&amp;gt;&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneFillColor=#ffe6cc;" parent="1" vertex="1">
+          <mxGeometry x="765" y="2026" width="170" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="c_IRepositorio_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_IRepositorio" vertex="1">
+          <mxGeometry x="0" y="42" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_IRepositorio_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_IRepositorio" vertex="1">
+          <mxGeometry x="0" y="60" width="170" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_IRepositorio_2" value="+ guardar(t : T) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_IRepositorio" vertex="1">
+          <mxGeometry x="0" y="68" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_IRepositorio_3" value="+ buscarPorId(id : ID) : T" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_IRepositorio" vertex="1">
+          <mxGeometry x="0" y="86" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_IRepositorio_4" value="+ listarTodos() : List&amp;lt;T&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_IRepositorio" vertex="1">
+          <mxGeometry x="0" y="104" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_IRepositorio_5" value="+ eliminar(id : ID) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_IRepositorio" vertex="1">
+          <mxGeometry x="0" y="122" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo" value="«abstract»&lt;br&gt;&lt;i&gt;&lt;b&gt;RepoArchivo&amp;lt;T, ID&amp;gt;&lt;/b&gt;&lt;/i&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneFillColor=#ffe6cc;" parent="1" vertex="1">
+          <mxGeometry x="740" y="2240" width="220" height="252" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_0" value="# datos : Map&amp;lt;ID, T&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="42" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_1" value="- archivo : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="60" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_2" value="- descripcion : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="78" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="96" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_4" value="# obtenerId(entidad : T) : ID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=2;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="104" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_5" value="+ guardar(entidad : T) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="122" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_6" value="+ buscarPorId(id : ID) : T" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="140" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_7" value="+ listarTodos() : List&amp;lt;T&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="158" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_8" value="+ eliminar(id : ID) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="176" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_9" value="- obtenerRuta(nombre : String) : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="194" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_10" value="- cargarDesdeDisco() : Map&amp;lt;ID, T&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="212" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoArchivo_11" value="- guardarEnDisco() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoArchivo" vertex="1">
+          <mxGeometry x="0" y="230" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoPaciente" value="&lt;b&gt;RepoPaciente&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneFillColor=#ffe6cc;" parent="1" vertex="1">
+          <mxGeometry x="175" y="2582" width="190" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoPaciente_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoPaciente" vertex="1">
+          <mxGeometry x="0" y="28" width="190" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoPaciente_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_RepoPaciente" vertex="1">
+          <mxGeometry x="0" y="46" width="190" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoPaciente_2" value="+ RepoPaciente()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoPaciente" vertex="1">
+          <mxGeometry x="0" y="54" width="190" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoPaciente_3" value="# obtenerId(p : Paciente) : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoPaciente" vertex="1">
+          <mxGeometry x="0" y="72" width="190" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoTurno" value="&lt;b&gt;RepoTurno&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneFillColor=#ffe6cc;" parent="1" vertex="1">
+          <mxGeometry x="760" y="2582" width="180" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoTurno_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoTurno" vertex="1">
+          <mxGeometry x="0" y="28" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoTurno_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_RepoTurno" vertex="1">
+          <mxGeometry x="0" y="46" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoTurno_2" value="+ RepoTurno()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoTurno" vertex="1">
+          <mxGeometry x="0" y="54" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoTurno_3" value="# obtenerId(t : Turno) : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoTurno" vertex="1">
+          <mxGeometry x="0" y="72" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoOdonto" value="&lt;b&gt;RepoOdonto&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneFillColor=#ffe6cc;" parent="1" vertex="1">
+          <mxGeometry x="1305" y="2582" width="200" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoOdonto_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoOdonto" vertex="1">
+          <mxGeometry x="0" y="28" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoOdonto_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_RepoOdonto" vertex="1">
+          <mxGeometry x="0" y="46" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoOdonto_2" value="+ RepoOdonto()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoOdonto" vertex="1">
+          <mxGeometry x="0" y="54" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_RepoOdonto_3" value="# obtenerId(o : Odontologo) : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_RepoOdonto" vertex="1">
+          <mxGeometry x="0" y="72" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente" value="«Serializable»&lt;br&gt;&lt;b&gt;Paciente&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#e1d5e7;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="454" width="220" height="234" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_0" value="- contador : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="42" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_1" value="- id : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="60" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_2" value="- nombre : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="78" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_3" value="- apellido : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="96" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_4" value="- dni : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="114" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_5" value="- email : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="132" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_6" value="- fechaIngreso : LocalDate" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="150" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_7" value="- domicilio : Domicilio" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="168" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="186" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_9" value="+ compareTo(otro : Paciente) : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="194" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Paciente_10" value="+ sincronizarContador(max : int) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_Paciente" vertex="1">
+          <mxGeometry x="0" y="212" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio" value="«Serializable»&lt;br&gt;&lt;b&gt;Domicilio&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#e1d5e7;" parent="1" vertex="1">
+          <mxGeometry x="1820" y="778" width="220" height="216" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio_0" value="- contador : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_Domicilio" vertex="1">
+          <mxGeometry x="0" y="42" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio_1" value="- id : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Domicilio" vertex="1">
+          <mxGeometry x="0" y="60" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio_2" value="- calle : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Domicilio" vertex="1">
+          <mxGeometry x="0" y="78" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio_3" value="- numero : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Domicilio" vertex="1">
+          <mxGeometry x="0" y="96" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio_4" value="- localidad : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Domicilio" vertex="1">
+          <mxGeometry x="0" y="114" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio_5" value="- provincia : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Domicilio" vertex="1">
+          <mxGeometry x="0" y="132" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio_6" value="- codigoPostal : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Domicilio" vertex="1">
+          <mxGeometry x="0" y="150" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio_7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_Domicilio" vertex="1">
+          <mxGeometry x="0" y="168" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio_8" value="+ getResumen() : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Domicilio" vertex="1">
+          <mxGeometry x="0" y="176" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Domicilio_9" value="+ sincronizarContador(max : int) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_Domicilio" vertex="1">
+          <mxGeometry x="0" y="194" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno" value="«Serializable»&lt;br&gt;&lt;b&gt;Turno&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#e1d5e7;" parent="1" vertex="1">
+          <mxGeometry x="2200" y="454" width="220" height="216" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno_0" value="- contador : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_Turno" vertex="1">
+          <mxGeometry x="0" y="42" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno_1" value="- id : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Turno" vertex="1">
+          <mxGeometry x="0" y="60" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno_2" value="- paciente : Paciente" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Turno" vertex="1">
+          <mxGeometry x="0" y="78" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno_3" value="- odontologo : Odontologo" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Turno" vertex="1">
+          <mxGeometry x="0" y="96" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno_4" value="- fecha : LocalDate" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Turno" vertex="1">
+          <mxGeometry x="0" y="114" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno_5" value="- hora : LocalTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Turno" vertex="1">
+          <mxGeometry x="0" y="132" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno_6" value="- estadoTurno : EstadoTurno" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Turno" vertex="1">
+          <mxGeometry x="0" y="150" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno_7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_Turno" vertex="1">
+          <mxGeometry x="0" y="168" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno_8" value="+ getDuracion() : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Turno" vertex="1">
+          <mxGeometry x="0" y="176" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Turno_9" value="+ sincronizarContador(max : int) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_Turno" vertex="1">
+          <mxGeometry x="0" y="194" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_EstadoTurno" value="«enumeration»&lt;br&gt;&lt;b&gt;EstadoTurno&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#e1d5e7;" parent="1" vertex="1">
+          <mxGeometry x="2225" y="256" width="170" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="c_EstadoTurno_0" value="PENDIENTE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_EstadoTurno" vertex="1">
+          <mxGeometry x="0" y="42" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_EstadoTurno_1" value="CONFIRMADO" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_EstadoTurno" vertex="1">
+          <mxGeometry x="0" y="60" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_EstadoTurno_2" value="CANCELADO" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_EstadoTurno" vertex="1">
+          <mxGeometry x="0" y="78" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_EstadoTurno_3" value="COMPLETADO" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_EstadoTurno" vertex="1">
+          <mxGeometry x="0" y="96" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontologo" value="«Serializable»&lt;br&gt;&lt;b&gt;Odontologo&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#e1d5e7;" parent="1" vertex="1">
+          <mxGeometry x="2580" y="454" width="220" height="198" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontologo_0" value="- contador : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_Odontologo" vertex="1">
+          <mxGeometry x="0" y="42" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontologo_1" value="- id : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Odontologo" vertex="1">
+          <mxGeometry x="0" y="60" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontologo_2" value="- nombre : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Odontologo" vertex="1">
+          <mxGeometry x="0" y="78" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontologo_3" value="- apellido : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Odontologo" vertex="1">
+          <mxGeometry x="0" y="96" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontologo_4" value="- matricula : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Odontologo" vertex="1">
+          <mxGeometry x="0" y="114" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontologo_5" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_Odontologo" vertex="1">
+          <mxGeometry x="0" y="132" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontologo_6" value="+ calcularDuracionTurno() : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Odontologo" vertex="1">
+          <mxGeometry x="0" y="140" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontologo_7" value="+ getEspecialidad() : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Odontologo" vertex="1">
+          <mxGeometry x="0" y="158" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontologo_8" value="+ sincronizarContador(max : int) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;fontStyle=4;" parent="c_Odontologo" vertex="1">
+          <mxGeometry x="0" y="176" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Endodoncista" value="&lt;b&gt;Endodoncista&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#e1d5e7;" parent="1" vertex="1">
+          <mxGeometry x="2270" y="778" width="180" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Endodoncista_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Endodoncista" vertex="1">
+          <mxGeometry x="0" y="28" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Endodoncista_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_Endodoncista" vertex="1">
+          <mxGeometry x="0" y="46" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Endodoncista_2" value="+ calcularDuracionTurno() : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Endodoncista" vertex="1">
+          <mxGeometry x="0" y="54" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Endodoncista_3" value="+ getEspecialidad() : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Endodoncista" vertex="1">
+          <mxGeometry x="0" y="72" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Ortodoncista" value="&lt;b&gt;Ortodoncista&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#e1d5e7;" parent="1" vertex="1">
+          <mxGeometry x="2490" y="778" width="180" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Ortodoncista_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Ortodoncista" vertex="1">
+          <mxGeometry x="0" y="28" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Ortodoncista_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_Ortodoncista" vertex="1">
+          <mxGeometry x="0" y="46" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Ortodoncista_2" value="+ calcularDuracionTurno() : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Ortodoncista" vertex="1">
+          <mxGeometry x="0" y="54" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Ortodoncista_3" value="+ getEspecialidad() : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Ortodoncista" vertex="1">
+          <mxGeometry x="0" y="72" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Periodoncista" value="&lt;b&gt;Periodoncista&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#e1d5e7;" parent="1" vertex="1">
+          <mxGeometry x="2710" y="778" width="180" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Periodoncista_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Periodoncista" vertex="1">
+          <mxGeometry x="0" y="28" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Periodoncista_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_Periodoncista" vertex="1">
+          <mxGeometry x="0" y="46" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Periodoncista_2" value="+ calcularDuracionTurno() : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Periodoncista" vertex="1">
+          <mxGeometry x="0" y="54" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Periodoncista_3" value="+ getEspecialidad() : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Periodoncista" vertex="1">
+          <mxGeometry x="0" y="72" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontopediatra" value="&lt;b&gt;Odontopediatra&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#e1d5e7;" parent="1" vertex="1">
+          <mxGeometry x="2930" y="778" width="180" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontopediatra_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Odontopediatra" vertex="1">
+          <mxGeometry x="0" y="28" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontopediatra_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_Odontopediatra" vertex="1">
+          <mxGeometry x="0" y="46" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontopediatra_2" value="+ calcularDuracionTurno() : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Odontopediatra" vertex="1">
+          <mxGeometry x="0" y="54" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_Odontopediatra_3" value="+ getEspecialidad() : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_Odontopediatra" vertex="1">
+          <mxGeometry x="0" y="72" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ClinicaException" value="«RuntimeException»&lt;br&gt;&lt;b&gt;ClinicaException&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;swimlaneFillColor=#f8cecc;" parent="1" vertex="1">
+          <mxGeometry x="2225" y="1144" width="170" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ClinicaException_0" value="- codigo : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ClinicaException" vertex="1">
+          <mxGeometry x="0" y="42" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ClinicaException_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_ClinicaException" vertex="1">
+          <mxGeometry x="0" y="60" width="170" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ClinicaException_2" value="+ getCodigo() : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ClinicaException" vertex="1">
+          <mxGeometry x="0" y="68" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ClinicaException_3" value="+ toString() : String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_ClinicaException" vertex="1">
+          <mxGeometry x="0" y="86" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_DatoInvalidoException" value="&lt;b&gt;DatoInvalidoException&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;swimlaneFillColor=#f8cecc;" parent="1" vertex="1">
+          <mxGeometry x="1660" y="1342" width="270" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="c_DatoInvalidoException_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_DatoInvalidoException" vertex="1">
+          <mxGeometry x="0" y="28" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_DatoInvalidoException_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_DatoInvalidoException" vertex="1">
+          <mxGeometry x="0" y="46" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_DatoInvalidoException_2" value="+ DatoInvalidoException(campo, motivo : String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_DatoInvalidoException" vertex="1">
+          <mxGeometry x="0" y="54" width="270" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteNoEncontradoException" value="&lt;b&gt;PacienteNoEncontradoException&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;swimlaneFillColor=#f8cecc;" parent="1" vertex="1">
+          <mxGeometry x="1970" y="1342" width="260" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteNoEncontradoException_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteNoEncontradoException" vertex="1">
+          <mxGeometry x="0" y="28" width="260" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteNoEncontradoException_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_PacienteNoEncontradoException" vertex="1">
+          <mxGeometry x="0" y="46" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_PacienteNoEncontradoException_2" value="+ PacienteNoEncontradoException(dni : String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_PacienteNoEncontradoException" vertex="1">
+          <mxGeometry x="0" y="54" width="260" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoNoEncontradoException" value="&lt;b&gt;OdontologoNoEncontradoException&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;swimlaneFillColor=#f8cecc;" parent="1" vertex="1">
+          <mxGeometry x="2270" y="1342" width="310" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoNoEncontradoException_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoNoEncontradoException" vertex="1">
+          <mxGeometry x="0" y="28" width="310" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoNoEncontradoException_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_OdontologoNoEncontradoException" vertex="1">
+          <mxGeometry x="0" y="46" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_OdontologoNoEncontradoException_2" value="+ OdontologoNoEncontradoException(matricula : String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_OdontologoNoEncontradoException" vertex="1">
+          <mxGeometry x="0" y="54" width="310" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoYaReservadoException" value="&lt;b&gt;TurnoYaReservadoException&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;swimlaneFillColor=#f8cecc;" parent="1" vertex="1">
+          <mxGeometry x="2620" y="1342" width="340" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoYaReservadoException_0" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoYaReservadoException" vertex="1">
+          <mxGeometry x="0" y="28" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoYaReservadoException_1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="c_TurnoYaReservadoException" vertex="1">
+          <mxGeometry x="0" y="46" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c_TurnoYaReservadoException_2" value="+ TurnoYaReservadoException(odontologo, fecha, hora : String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=nowrap;html=1;fontSize=11;" parent="c_TurnoYaReservadoException" vertex="1">
+          <mxGeometry x="0" y="54" width="340" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" style="endArrow=open;endFill=0;endSize=10;dashed=1;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_Main" target="c_MainFrame" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e0_l0" value="«create»" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e0" vertex="1" connectable="0">
+          <mxGeometry x="0" relative="1" as="geometry">
+            <mxPoint x="40" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" value="" style="endArrow=open;endFill=0;endSize=10;startArrow=diamondThin;startFill=1;startSize=14;html=1;rounded=0;fontSize=11;exitX=0.000;exitY=0.500;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_MainFrame" target="c_PacientePanel" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e1" vertex="1" connectable="0">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint x="12" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="" style="endArrow=open;endFill=0;endSize=10;startArrow=diamondThin;startFill=1;startSize=14;html=1;rounded=0;fontSize=11;exitX=1.000;exitY=0.500;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_MainFrame" target="c_OdontologoPanel" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1405" y="355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e2" vertex="1" connectable="0">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint x="-12" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="" style="endArrow=open;endFill=0;endSize=10;startArrow=diamondThin;startFill=1;startSize=14;html=1;rounded=0;fontSize=11;exitX=0.777;exitY=1.000;exitDx=0;exitDy=0;entryX=0.859;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_MainFrame" target="c_TurnoPanel" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e3" vertex="1" connectable="0">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint x="12" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.800;exitY=0.000;exitDx=0;exitDy=0;entryX=0.250;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_PacientePanel" target="c_BaseFormPanel" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="766" />
+              <mxPoint x="654" y="766" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.200;exitY=0.000;exitDx=0;exitDy=0;entryX=0.750;entryY=1.000;entryDx=0;entryDy=0;jumpStyle=arc;jumpSize=12;" parent="1" source="c_OdontologoPanel" target="c_BaseFormPanel" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1324" y="780" />
+              <mxPoint x="839" y="780" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_PacientePanel" target="c_PacienteController" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e6" vertex="1" connectable="0">
+          <mxGeometry x="0.7" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_PacienteController" target="c_ServicioPaciente" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e7" vertex="1" connectable="0">
+          <mxGeometry x="0.7" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_TurnoPanel" target="c_TurnoController" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e8" vertex="1" connectable="0">
+          <mxGeometry x="0.7" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_TurnoController" target="c_ServicioTurno" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e9" vertex="1" connectable="0">
+          <mxGeometry x="0.7" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_OdontologoPanel" target="c_OdontologoController" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e10" vertex="1" connectable="0">
+          <mxGeometry x="0.7" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_OdontologoController" target="c_ServicioOdonto" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e11" vertex="1" connectable="0">
+          <mxGeometry x="0.7" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.150;exitY=1.000;exitDx=0;exitDy=0;entryX=0.850;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_TurnoController" target="c_ServicioPaciente" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="706" y="1562" />
+              <mxPoint x="431" y="1562" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e12" vertex="1" connectable="0">
+          <mxGeometry x="0.9" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.850;exitY=1.000;exitDx=0;exitDy=0;entryX=0.150;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_TurnoController" target="c_ServicioOdonto" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="993" y="1587" />
+              <mxPoint x="1275" y="1587" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e13" vertex="1" connectable="0">
+          <mxGeometry x="0.9" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.000;entryY=0.500;entryDx=0;entryDy=0;" parent="1" source="c_ServicioPaciente" target="c_IRepositorio" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="2098" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e14" vertex="1" connectable="0">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_ServicioTurno" target="c_IRepositorio" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15_l0" value="3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e15" vertex="1" connectable="0">
+          <mxGeometry x="0.6" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=1.000;entryY=0.500;entryDx=0;entryDy=0;" parent="1" source="c_ServicioOdonto" target="c_IRepositorio" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1405" y="2098" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e16" vertex="1" connectable="0">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" value="" style="endArrow=block;endFill=0;endSize=12;dashed=1;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_RepoArchivo" target="c_IRepositorio" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.250;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_RepoPaciente" target="c_RepoArchivo" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="2537" />
+              <mxPoint x="795" y="2537" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_RepoTurno" target="c_RepoArchivo" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.750;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_RepoOdonto" target="c_RepoArchivo" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1405" y="2537" />
+              <mxPoint x="905" y="2537" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.000;exitY=0.500;exitDx=0;exitDy=0;entryX=1.000;entryY=0.462;entryDx=0;entryDy=0;" parent="1" source="c_Turno" target="c_Paciente" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21_l0" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e21" vertex="1" connectable="0">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21_l1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e21" vertex="1" connectable="0">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=1.000;exitY=0.500;exitDx=0;exitDy=0;entryX=0.000;entryY=0.545;entryDx=0;entryDy=0;" parent="1" source="c_Turno" target="c_Odontologo" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22_l0" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e22" vertex="1" connectable="0">
+          <mxGeometry x="-0.75" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22_l1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e22" vertex="1" connectable="0">
+          <mxGeometry x="0.75" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" value="" style="endArrow=open;endFill=0;endSize=10;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_Turno" target="c_EstadoTurno" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e23" vertex="1" connectable="0">
+          <mxGeometry x="0.6" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24" value="" style="endArrow=open;endFill=0;endSize=10;startArrow=diamondThin;startFill=1;startSize=14;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.000;entryDx=0;entryDy=0;" parent="1" source="c_Paciente" target="c_Domicilio" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e24_l0" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e24" vertex="1" connectable="0">
+          <mxGeometry x="-0.6" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24_l1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=none;" parent="e24" vertex="1" connectable="0">
+          <mxGeometry x="0.6" relative="1" as="geometry">
+            <mxPoint x="10" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e25" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.200;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_Endodoncista" target="c_Odontologo" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2360" y="733" />
+              <mxPoint x="2624" y="733" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.400;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_Ortodoncista" target="c_Odontologo" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2580" y="733" />
+              <mxPoint x="2668" y="733" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.600;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_Periodoncista" target="c_Odontologo" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2800" y="733" />
+              <mxPoint x="2712" y="733" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.800;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_Odontopediatra" target="c_Odontologo" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3020" y="733" />
+              <mxPoint x="2756" y="733" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e29" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.200;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_DatoInvalidoException" target="c_ClinicaException" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1795" y="1297" />
+              <mxPoint x="2259" y="1297" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e30" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.400;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_PacienteNoEncontradoException" target="c_ClinicaException" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2100" y="1297" />
+              <mxPoint x="2293" y="1297" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e31" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.600;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_OdontologoNoEncontradoException" target="c_ClinicaException" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2425" y="1297" />
+              <mxPoint x="2327" y="1297" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e32" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;fontSize=11;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.800;entryY=1.000;entryDx=0;entryDy=0;" parent="1" source="c_TurnoYaReservadoException" target="c_ClinicaException" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2790" y="1297" />
+              <mxPoint x="2361" y="1297" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="titulo" value="&lt;b&gt;Clínica Sonrisa Feliz — Diagrama de Clases V6&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="40" y="30" width="700" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nota" value="Capas: Vista → Controller → Servicio → Persistencia.&lt;br&gt;Main crea repos, servicios y controllers y se los pasa a MainFrame.&lt;br&gt;Getters y setters omitidos. Los servicios lanzan las excepciones del paquete Excepciones." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=14;align=left;spacingLeft=8;fontSize=11;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="40" y="2736" width="560" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="leyenda" value="&lt;b&gt;Paquetes&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="1445" y="110" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_0" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="1445" y="140" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_t0" value="Vista: &lt;i&gt;View&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1475" y="139" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1445" y="170" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_t1" value="Controller: &lt;i&gt;Controller&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1475" y="169" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1445" y="200" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_t2" value="Servicio (lógica de negocio): &lt;i&gt;LogicaDeNegocio&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1475" y="199" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="1445" y="230" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_t3" value="Persistencia: &lt;i&gt;Persistencia&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1475" y="229" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1445" y="260" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_t4" value="Modelo (Entity): &lt;i&gt;Entity&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1475" y="259" width="320" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1445" y="290" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_t5" value="Excepciones: &lt;i&gt;Excepciones&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="1475" y="289" width="320" height="24" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
