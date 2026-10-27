@@ -1,11 +1,8 @@
 package View;
 
-import LogicaDeNegocio.ServicioOdonto;
-import LogicaDeNegocio.ServicioPaciente;
-import LogicaDeNegocio.ServicioTurno;
-import Persistencia.RepoOdonto;
-import Persistencia.RepoPaciente;
-import Persistencia.RepoTurno;
+import Controller.OdontologoController;
+import Controller.PacienteController;
+import Controller.TurnoController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,10 +11,6 @@ import java.awt.event.WindowEvent;
 
 public class MainFrame extends JFrame {
 
-    private ServicioPaciente servPac;
-    private ServicioOdonto servOdo;
-    private ServicioTurno servTur;
-
     private JPanel contenidoPanel;
     private CardLayout cardLayout;
 
@@ -25,15 +18,9 @@ public class MainFrame extends JFrame {
     private OdontologoPanel odontologoPanel;
     private TurnoPanel turnoPanel;
 
-    public MainFrame() {
-        RepoPaciente repoPac = new RepoPaciente();
-        RepoOdonto repoOdo = new RepoOdonto();
-        RepoTurno repoTur = new RepoTurno();
-
-        servPac = new ServicioPaciente(repoPac);
-        servOdo = new ServicioOdonto(repoOdo);
-        servTur = new ServicioTurno(repoTur, repoPac, repoOdo);
-
+    public MainFrame(PacienteController pacienteController,
+                     OdontologoController odontologoController,
+                     TurnoController turnoController) {
         setTitle("Clínica Sonrisa Feliz");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(900, 650);
@@ -45,9 +32,9 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
         contenidoPanel = new JPanel(cardLayout);
 
-        pacientePanel = new PacientePanel(servPac);
-        odontologoPanel = new OdontologoPanel(servOdo);
-        turnoPanel = new TurnoPanel(servTur, servPac, servOdo);
+        pacientePanel = new PacientePanel(pacienteController);
+        odontologoPanel = new OdontologoPanel(odontologoController);
+        turnoPanel = new TurnoPanel(turnoController);
 
         contenidoPanel.add(pacientePanel, "PACIENTES");
         contenidoPanel.add(odontologoPanel, "ODONTOLOGOS");

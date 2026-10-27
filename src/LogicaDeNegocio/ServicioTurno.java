@@ -53,16 +53,7 @@ public class ServicioTurno {
             throw new OdontologoNoEncontradoException(t.getOdontologo().getMatricula());
 
         // Validar que el odontólogo no tenga otro turno en ese horario
-        boolean horarioOcupado = repoTurno.listarTodos().stream()
-                .anyMatch(existente ->
-                        existente.getFecha().equals(t.getFecha()) &&
-                        existente.getHora().equals(t.getHora()) &&
-                        existente.getOdontologo().getMatricula().equals(t.getOdontologo().getMatricula()));
-
-        if (horarioOcupado) {
-            String nombre = t.getOdontologo().getNombre() + " " + t.getOdontologo().getApellido();
-            throw new TurnoYaReservadoException(nombre, t.getFecha().toString(), t.getHora().toString());
-        }
+        verificarHorarioLibre(t.getOdontologo(), t.getFecha(), t.getHora(), null);
 
         repoTurno.guardar(t);
         return true;
@@ -125,21 +116,10 @@ public class ServicioTurno {
     }
 
     public boolean actualizarTurno(Integer id, LocalDate nuevaFecha, LocalTime nuevaHora) {
-        Turno t = repoTurno.buscarPorId(id);
-        if (t == null)
-            throw new DatoInvalidoException("ID de turno", "no se encontró ningún turno con ID: " + id);
+        Turno t = buscar(id);
 
-        boolean horarioOcupado = repoTurno.listarTodos().stream()
-                .filter(existente -> !existente.getId().equals(id))  // excluye el turno actual
-                .anyMatch(existente ->
-                        existente.getFecha().equals(nuevaFecha) &&
-                        existente.getHora().equals(nuevaHora) &&
-                        existente.getOdontologo().getMatricula().equals(t.getOdontologo().getMatricula()));
-
-        if (horarioOcupado) {
-            String nombre = t.getOdontologo().getNombre() + " " + t.getOdontologo().getApellido();
-            throw new TurnoYaReservadoException(nombre, nuevaFecha.toString(), nuevaHora.toString());
-        }
+        // excluye el turno actual de la comparación
+        verificarHorarioLibre(t.getOdontologo(), nuevaFecha, nuevaHora, id);
 
         t.setFecha(nuevaFecha);
         t.setHora(nuevaHora);
@@ -148,9 +128,7 @@ public class ServicioTurno {
     }
 
     public boolean cambiarEstadoTurno(Integer id, EstadoTurno nuevoEstado) {
-        Turno t = repoTurno.buscarPorId(id);
-        if (t == null)
-            throw new DatoInvalidoException("ID de turno", "no se encontró ningún turno con ID: " + id);
+        Turno t = buscar(id);
         if (nuevoEstado == null)
             throw new DatoInvalidoException("Estado", "no puede ser nulo");
         t.setEstadoTurno(nuevoEstado);
@@ -159,9 +137,27 @@ public class ServicioTurno {
     }
 
     public boolean eliminar(Integer id) {
-        if (repoTurno.buscarPorId(id) == null)
-            throw new DatoInvalidoException("ID de turno", "no se encontró ningún turno con ID: " + id);
+        buscar(id); // lanza la excepción si no existe
         repoTurno.eliminar(id);
         return true;
+    }
+
+    /**
+     * Lanza TurnoYaReservadoException si el odontólogo ya tiene un turno en esa fecha y hora.
+     * idExcluido: turno que no se compara (el que se está modificando). En un alta es null.
+     * Antes esta lógica estaba copiada en crearTurno y actualizarTurno.
+     */
+    private void verificarHorarioLibre(Odontologo odontologo, LocalDate fecha, LocalTime hora, Integer idExcluido) {
+        boolean horarioOcupado = repoTurno.listarTodos().stream()
+                .filter(existente -> idExcluido == null || !existente.getId().equals(idExcluido))
+                .anyMatch(existente ->
+                        existente.getFecha().equals(fecha) &&
+                        existente.getHora().equals(hora) &&
+                        existente.getOdontologo().getMatricula().equals(odontologo.getMatricula()));
+
+        if (horarioOcupado) {
+            String nombre = odontologo.getNombre() + " " + odontologo.getApellido();
+            throw new TurnoYaReservadoException(nombre, fecha.toString(), hora.toString());
+        }
     }
 }

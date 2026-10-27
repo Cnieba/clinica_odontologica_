@@ -1,10 +1,8 @@
 package View;
 
+import Controller.TurnoController;
 import Entity.*;
 import Excepciones.ClinicaException;
-import LogicaDeNegocio.ServicioOdonto;
-import LogicaDeNegocio.ServicioPaciente;
-import LogicaDeNegocio.ServicioTurno;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -12,16 +10,12 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 
 public class TurnoPanel extends JPanel {
 
-    private ServicioTurno servTur;
-    private ServicioPaciente servPac;
-    private ServicioOdonto servOdo;
+    private TurnoController controller;
 
     private JComboBox<String> cmbPaciente, cmbOdontologo;
     private JComboBox<EstadoTurno> cmbEstado;
@@ -30,10 +24,8 @@ public class TurnoPanel extends JPanel {
     private DefaultTableModel modelo;
     private Integer idSeleccionado = null;
 
-    public TurnoPanel(ServicioTurno servTur, ServicioPaciente servPac, ServicioOdonto servOdo) {
-        this.servTur = servTur;
-        this.servPac = servPac;
-        this.servOdo = servOdo;
+    public TurnoPanel(TurnoController controller) {
+        this.controller = controller;
 
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -42,7 +34,7 @@ public class TurnoPanel extends JPanel {
         add(crearTablaPanel(), BorderLayout.CENTER);
 
         refrescarCombos();
-        cargarTabla(servTur.listar());
+        cargarTabla(controller.listarTurnos());
     }
 
     private JPanel crearPanelIzquierdo() {
@@ -153,7 +145,7 @@ public class TurnoPanel extends JPanel {
         btnRango.addActionListener(e -> buscarPorRango());
         btnPorPac.addActionListener(e -> buscarPorPaciente());
         btnPorOdo.addActionListener(e -> buscarPorOdontologo());
-        btnTodos.addActionListener(e -> cargarTabla(servTur.listar()));
+        btnTodos.addActionListener(e -> cargarTabla(controller.listarTurnos()));
 
         return panel;
     }
@@ -186,11 +178,11 @@ public class TurnoPanel extends JPanel {
 
     public void refrescarCombos() {
         cmbPaciente.removeAllItems();
-        for (Paciente p : servPac.listar())
+        for (Paciente p : controller.listarPacientes())
             cmbPaciente.addItem(p.getDni() + " - " + p.getNombre() + " " + p.getApellido());
 
         cmbOdontologo.removeAllItems();
-        for (Odontologo o : servOdo.listar())
+        for (Odontologo o : controller.listarOdontologos())
             cmbOdontologo.addItem(o.getMatricula() + " - " + o.getNombre() + " " + o.getApellido());
     }
 
@@ -236,14 +228,8 @@ public class TurnoPanel extends JPanel {
         try {
             String dniStr = ((String) cmbPaciente.getSelectedItem()).split(" - ", 2)[0];
             String matStr = ((String) cmbOdontologo.getSelectedItem()).split(" - ", 2)[0];
-            Paciente p = servPac.buscar(dniStr);
-            Odontologo o = servOdo.buscar(matStr);
-            LocalDate fecha = LocalDate.parse(txtFecha.getText().trim());
-            LocalTime hora = LocalTime.parse(txtHora.getText().trim());
-
-            Turno t = new Turno(p, o, fecha, hora, EstadoTurno.PENDIENTE);
-            servTur.crearTurno(t);
-            cargarTabla(servTur.listar());
+            controller.crearTurno(dniStr, matStr, txtFecha.getText().trim(), txtHora.getText().trim());
+            cargarTabla(controller.listarTurnos());
             limpiarFormulario();
             JOptionPane.showMessageDialog(this, "Turno creado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } catch (ClinicaException ex) {
@@ -263,11 +249,9 @@ public class TurnoPanel extends JPanel {
             return;
         }
         try {
-            LocalDate fecha = LocalDate.parse(txtFecha.getText().trim());
-            LocalTime hora = LocalTime.parse(txtHora.getText().trim());
-            servTur.actualizarTurno(idSeleccionado, fecha, hora);
-            servTur.cambiarEstadoTurno(idSeleccionado, (EstadoTurno) cmbEstado.getSelectedItem());
-            cargarTabla(servTur.listar());
+            controller.modificarTurno(idSeleccionado, txtFecha.getText().trim(), txtHora.getText().trim(),
+                    (EstadoTurno) cmbEstado.getSelectedItem());
+            cargarTabla(controller.listarTurnos());
             limpiarFormulario();
             JOptionPane.showMessageDialog(this, "Turno actualizado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } catch (ClinicaException ex) {
@@ -287,8 +271,8 @@ public class TurnoPanel extends JPanel {
                 "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
         if (conf == JOptionPane.YES_OPTION) {
             try {
-                servTur.eliminar(idSeleccionado);
-                cargarTabla(servTur.listar());
+                controller.eliminarTurno(idSeleccionado);
+                cargarTabla(controller.listarTurnos());
                 limpiarFormulario();
                 JOptionPane.showMessageDialog(this, "Turno eliminado.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             } catch (ClinicaException ex) {
@@ -299,9 +283,7 @@ public class TurnoPanel extends JPanel {
 
     private void buscarPorRango() {
         try {
-            LocalDate desde = LocalDate.parse(txtFechaDesde.getText().trim());
-            LocalDate hasta = LocalDate.parse(txtFechaHasta.getText().trim());
-            List<Turno> res = servTur.buscarPorRangoFechas(desde, hasta);
+            List<Turno> res = controller.buscarPorRango(txtFechaDesde.getText().trim(), txtFechaHasta.getText().trim());
             cargarTabla(res);
             if (res.isEmpty())
                 JOptionPane.showMessageDialog(this, "No hay turnos en ese rango.", "Sin resultados", JOptionPane.INFORMATION_MESSAGE);
@@ -319,7 +301,7 @@ public class TurnoPanel extends JPanel {
             return;
         }
         try {
-            List<Turno> res = servTur.buscarPorPaciente(dni);
+            List<Turno> res = controller.buscarPorPaciente(dni);
             cargarTabla(res);
             if (res.isEmpty())
                 JOptionPane.showMessageDialog(this, "No hay turnos para ese paciente.", "Sin resultados", JOptionPane.INFORMATION_MESSAGE);
@@ -335,7 +317,7 @@ public class TurnoPanel extends JPanel {
             return;
         }
         try {
-            List<Turno> res = servTur.buscarPorOdontologo(mat);
+            List<Turno> res = controller.buscarPorOdontologo(mat);
             cargarTabla(res);
             if (res.isEmpty())
                 JOptionPane.showMessageDialog(this, "No hay turnos para ese odontólogo.", "Sin resultados", JOptionPane.INFORMATION_MESSAGE);

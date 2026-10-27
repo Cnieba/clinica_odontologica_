@@ -1,8 +1,8 @@
 package View;
 
-import Entity.*;
+import Controller.OdontologoController;
+import Entity.Odontologo;
 import Excepciones.ClinicaException;
-import LogicaDeNegocio.ServicioOdonto;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class OdontologoPanel extends BaseFormPanel {
 
-    private ServicioOdonto servicio;
+    private OdontologoController controller;
 
     private JTextField txtNombre, txtApellido, txtMatricula;
     private JComboBox<String> cmbEspecialidad;
@@ -22,15 +22,15 @@ public class OdontologoPanel extends BaseFormPanel {
     private DefaultTableModel modelo;
     private String matriculaSeleccionada = null;
 
-    public OdontologoPanel(ServicioOdonto servicio) {
-        this.servicio = servicio;
+    public OdontologoPanel(OdontologoController controller) {
+        this.controller = controller;
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
         add(enScrollPane(crearFormulario(), 300), BorderLayout.WEST);
         add(crearTablaPanel(), BorderLayout.CENTER);
 
-        cargarTabla(servicio.listar());
+        cargarTabla(controller.listarOdontologos());
     }
 
     private JPanel crearFormulario() {
@@ -148,17 +148,8 @@ public class OdontologoPanel extends BaseFormPanel {
             String mat = txtMatricula.getText().trim();
             String esp = (String) cmbEspecialidad.getSelectedItem();
 
-            Odontologo o;
-            switch (esp) {
-                case "Endodoncista":   o = new Endodoncista(nombre, apellido, mat);   break;
-                case "Ortodoncista":   o = new Ortodoncista(nombre, apellido, mat);   break;
-                case "Periodoncista":  o = new Periodoncista(nombre, apellido, mat);  break;
-                case "Odontopediatra": o = new Odontopediatra(nombre, apellido, mat); break;
-                default:               o = new Odontologo(nombre, apellido, mat);
-            }
-
-            servicio.registrarOdontologo(o);
-            cargarTabla(servicio.listar());
+            controller.registrarOdontologo(nombre, apellido, mat, esp);
+            cargarTabla(controller.listarOdontologos());
             limpiarFormulario();
             JOptionPane.showMessageDialog(this, "Odontólogo registrado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } catch (ClinicaException ex) {
@@ -176,8 +167,8 @@ public class OdontologoPanel extends BaseFormPanel {
             return;
         }
         try {
-            servicio.actualizarOdontologo(matriculaSeleccionada, txtNombre.getText().trim(), txtApellido.getText().trim());
-            cargarTabla(servicio.listar());
+            controller.modificarOdontologo(matriculaSeleccionada, txtNombre.getText().trim(), txtApellido.getText().trim());
+            cargarTabla(controller.listarOdontologos());
             limpiarFormulario();
             JOptionPane.showMessageDialog(this, "Odontólogo actualizado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         } catch (ClinicaException ex) {
@@ -195,8 +186,8 @@ public class OdontologoPanel extends BaseFormPanel {
                 "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
         if (conf == JOptionPane.YES_OPTION) {
             try {
-                servicio.eliminar(matriculaSeleccionada);
-                cargarTabla(servicio.listar());
+                controller.eliminarOdontologo(matriculaSeleccionada);
+                cargarTabla(controller.listarOdontologos());
                 limpiarFormulario();
                 JOptionPane.showMessageDialog(this, "Odontólogo eliminado.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             } catch (ClinicaException ex) {

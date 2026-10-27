@@ -11,13 +11,15 @@ public class Domicilio implements Serializable {
     private String numero;
     private String localidad;
     private String provincia;
+    private String codigoPostal;
 
-    public Domicilio(String calle, String numero, String localidad, String provincia) {
+    public Domicilio(String calle, String numero, String localidad, String provincia, String codigoPostal) {
         this.id = ++contador;
         this.calle = calle;
         this.numero = numero;
         this.localidad = localidad;
         this.provincia = provincia;
+        this.codigoPostal = codigoPostal;
     }
 
     public static void sincronizarContador(int max) {
@@ -33,6 +35,13 @@ public class Domicilio implements Serializable {
     public void setLocalidad(String localidad) { this.localidad = localidad; }
     public String getProvincia() { return provincia; }
     public void setProvincia(String provincia) { this.provincia = provincia; }
+    public String getCodigoPostal() { return codigoPostal; }
+    public void setCodigoPostal(String codigoPostal) { this.codigoPostal = codigoPostal; }
+
+    // Experto en información: el domicilio sabe cómo mostrarse resumido (para la tabla)
+    public String getResumen() {
+        return calle + " " + numero + ", " + localidad;
+    }
 
     @Override
     public String toString() {
@@ -41,6 +50,7 @@ public class Domicilio implements Serializable {
                 ", Calle: " + getCalle() + '\'' +
                 ", Número: " + getNumero() + '\'' +
                 ", Localidad: " + getLocalidad() + '\'' +
-                ", Provincia: " + getProvincia();
+                ", Provincia: " + getProvincia() + '\'' +
+                ", Código postal: " + getCodigoPostal();
     }
 }
