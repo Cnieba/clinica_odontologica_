@@ -17,7 +17,7 @@ public class ServicioPaciente {
         this.repo = repo;
     }
 
-    public boolean registrarPaciente(Paciente p) {
+    public void registrarPaciente(Paciente p) {
         // Validaciones con DatoInvalidoException
         if (p.getDni() == null || p.getDni().isBlank())
             throw new DatoInvalidoException("DNI", "no puede estar vacío");
@@ -29,7 +29,6 @@ public class ServicioPaciente {
         if (repo.buscarPorId(p.getDni()) != null)
             throw new DatoInvalidoException("DNI", "ya existe un paciente con el DNI " + p.getDni());
         repo.guardar(p);
-        return true;
     }
 
     public void eliminarPaciente(String dni) {
@@ -38,8 +37,8 @@ public class ServicioPaciente {
         repo.eliminar(dni);
     }
 
-    public boolean actualizarPaciente(String dni, String nuevoNombre, String nuevoApellido, String nuevoEmail,
-                                      Domicilio nuevoDomicilio) {
+    public void actualizarPaciente(String dni, String nuevoNombre, String nuevoApellido, String nuevoEmail,
+                                   Domicilio nuevoDomicilio) {
         Paciente p = repo.buscarPorId(dni);
         if (p == null) throw new PacienteNoEncontradoException(dni);
 
@@ -51,10 +50,9 @@ public class ServicioPaciente {
         p.setEmail(nuevoEmail);
         p.setDomicilio(nuevoDomicilio);
         repo.guardar(p);
-        return true;
     }
 
-    // ── Validaciones (antes estaban repetidas en registrar y actualizar) ──
+    // ── Validaciones ──
     private void validarDatosPersonales(String nombre, String apellido, String email) {
         if (nombre == null || nombre.isBlank())
             throw new DatoInvalidoException("Nombre", "no puede estar vacío");
@@ -99,11 +97,10 @@ public class ServicioPaciente {
 
     /**
      * Lista todos los pacientes ordenados alfabéticamente por apellido (luego nombre).
-     * Usa Stream API + Comparable implementado en Paciente.
      */
     public List<Paciente> listar() {
         return repo.listarTodos().stream()
-                .sorted()                    // usa Paciente.compareTo()
+                .sorted()
                 .collect(Collectors.toList());
     }
 
@@ -121,9 +118,9 @@ public class ServicioPaciente {
         return repo.listarTodos().stream()
                 .filter(p -> p.getApellido() != null
                         && p.getApellido().toLowerCase(
-                                java.util.Locale.ROOT).contains(
-                                        busqueda.toLowerCase(
-                                                java.util.Locale.ROOT)))
+                        java.util.Locale.ROOT).contains(
+                        busqueda.toLowerCase(
+                                java.util.Locale.ROOT)))
                 .sorted()
                 .collect(Collectors.toList());
     }

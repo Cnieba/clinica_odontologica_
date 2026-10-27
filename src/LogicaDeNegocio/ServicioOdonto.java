@@ -17,7 +17,7 @@ public class ServicioOdonto {
         this.repo = repo;
     }
 
-    public boolean registrarOdontologo(Odontologo o) {
+    public void registrarOdontologo(Odontologo o) {
         if (o.getMatricula() == null || o.getMatricula().isBlank())
             throw new DatoInvalidoException("Matrícula", "no puede estar vacía");
         if (!o.getMatricula().matches("\\d+"))
@@ -29,8 +29,8 @@ public class ServicioOdonto {
 
         if (repo.buscarPorId(o.getMatricula()) != null)
             throw new DatoInvalidoException("Matrícula", "ya existe un odontólogo con la matrícula " + o.getMatricula());
+
         repo.guardar(o);
-        return true;
     }
 
     /**
@@ -54,17 +54,17 @@ public class ServicioOdonto {
                 .collect(Collectors.toList());
     }
 
-    public boolean actualizarOdontologo(String matricula, String nuevoNombre, String nuevoApellido) {
+    public void actualizarOdontologo(String matricula, String nuevoNombre, String nuevoApellido) {
         Odontologo o = repo.buscarPorId(matricula);
         if (o == null) throw new OdontologoNoEncontradoException(matricula);
         if (nuevoNombre == null || nuevoNombre.isBlank())
             throw new DatoInvalidoException("Nombre", "no puede estar vacío");
         if (nuevoApellido == null || nuevoApellido.isBlank())
             throw new DatoInvalidoException("Apellido", "no puede estar vacío");
+
         o.setNombre(nuevoNombre);
         o.setApellido(nuevoApellido);
         repo.guardar(o);
-        return true;
     }
 
     public void eliminar(String matricula) {

@@ -34,7 +34,7 @@ public class ServicioTurno {
      * - OdontologoNoEncontradoException si el odontólogo no está registrado.
      * - TurnoYaReservadoException si el odontólogo ya tiene turno en ese horario.
      */
-    public boolean crearTurno(Turno t) {
+    public void crearTurno(Turno t) {
         if (t == null)
             throw new DatoInvalidoException("Turno", "no puede ser nulo");
         if (t.getPaciente() == null)
@@ -56,7 +56,6 @@ public class ServicioTurno {
         verificarHorarioLibre(t.getOdontologo(), t.getFecha(), t.getHora(), null);
 
         repoTurno.guardar(t);
-        return true;
     }
 
     public Turno buscar(Integer id) {
@@ -77,7 +76,6 @@ public class ServicioTurno {
 
     /**
      * Filtra turnos dentro de un rango de fechas (inclusivo).
-     * Usa Stream API con filter.
      */
     public List<Turno> buscarPorRangoFechas(LocalDate desde, LocalDate hasta) {
         if (desde == null || hasta == null)
@@ -115,7 +113,7 @@ public class ServicioTurno {
                 .collect(Collectors.toList());
     }
 
-    public boolean actualizarTurno(Integer id, LocalDate nuevaFecha, LocalTime nuevaHora) {
+    public void actualizarTurno(Integer id, LocalDate nuevaFecha, LocalTime nuevaHora) {
         Turno t = buscar(id);
 
         // excluye el turno actual de la comparación
@@ -124,36 +122,31 @@ public class ServicioTurno {
         t.setFecha(nuevaFecha);
         t.setHora(nuevaHora);
         repoTurno.guardar(t);
-        return true;
     }
 
-    public boolean cambiarEstadoTurno(Integer id, EstadoTurno nuevoEstado) {
+    public void cambiarEstadoTurno(Integer id, EstadoTurno nuevoEstado) {
         Turno t = buscar(id);
         if (nuevoEstado == null)
             throw new DatoInvalidoException("Estado", "no puede ser nulo");
         t.setEstadoTurno(nuevoEstado);
         repoTurno.guardar(t);
-        return true;
     }
 
-    public boolean eliminar(Integer id) {
+    public void eliminar(Integer id) {
         buscar(id); // lanza la excepción si no existe
         repoTurno.eliminar(id);
-        return true;
     }
 
     /**
      * Lanza TurnoYaReservadoException si el odontólogo ya tiene un turno en esa fecha y hora.
-     * idExcluido: turno que no se compara (el que se está modificando). En un alta es null.
-     * Antes esta lógica estaba copiada en crearTurno y actualizarTurno.
      */
     private void verificarHorarioLibre(Odontologo odontologo, LocalDate fecha, LocalTime hora, Integer idExcluido) {
         boolean horarioOcupado = repoTurno.listarTodos().stream()
                 .filter(existente -> idExcluido == null || !existente.getId().equals(idExcluido))
                 .anyMatch(existente ->
                         existente.getFecha().equals(fecha) &&
-                        existente.getHora().equals(hora) &&
-                        existente.getOdontologo().getMatricula().equals(odontologo.getMatricula()));
+                                existente.getHora().equals(hora) &&
+                                existente.getOdontologo().getMatricula().equals(odontologo.getMatricula()));
 
         if (horarioOcupado) {
             String nombre = odontologo.getNombre() + " " + odontologo.getApellido();
