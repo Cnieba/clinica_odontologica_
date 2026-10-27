@@ -2,6 +2,7 @@ package Entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Paciente implements Serializable, Comparable<Paciente> {
 
@@ -18,11 +19,11 @@ public class Paciente implements Serializable, Comparable<Paciente> {
 
     public Paciente(String nombre, String apellido, String dni, String email, LocalDate fechaIngreso, Domicilio domicilio) {
         this.id = ++contador;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
+        this.nombre = Objects.requireNonNull(nombre, "El nombre es obligatorio");
+        this.apellido = Objects.requireNonNull(apellido, "El apellido es obligatorio");
+        this.dni = Objects.requireNonNull(dni, "El DNI es obligatorio");
         this.email = email;
-        this.fechaIngreso = fechaIngreso;
+        this.fechaIngreso = Objects.requireNonNull(fechaIngreso, "La fecha de ingreso es obligatoria");
         this.domicilio = domicilio;
     }
 
