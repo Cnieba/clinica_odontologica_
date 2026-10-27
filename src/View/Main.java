@@ -19,8 +19,8 @@ public class Main {
         RepoOdonto repoOdo = new RepoOdonto();
         RepoTurno repoTur = new RepoTurno();
 
-        ServicioPaciente servPac = new ServicioPaciente(repoPac);
-        ServicioOdonto servOdo = new ServicioOdonto(repoOdo);
+        ServicioPaciente servPac = new ServicioPaciente(repoPac, repoTur);
+        ServicioOdonto servOdo = new ServicioOdonto(repoOdo, repoTur);
         ServicioTurno servTur = new ServicioTurno(repoTur, repoPac, repoOdo);
 
         PacienteController pacienteController = new PacienteController(servPac);

@@ -124,6 +124,8 @@ public class OdontologoPanel extends BaseFormPanel {
         txtApellido.setText((String) modelo.getValueAt(fila, 2));
         txtMatricula.setText(matriculaSeleccionada);
         txtMatricula.setEditable(false);
+        // La especialidad define la clase del odontólogo (Endodoncista, Ortodoncista...), no se puede modificar
+        cmbEspecialidad.setEnabled(false);
         String esp = (String) modelo.getValueAt(fila, 4);
         for (int i = 0; i < cmbEspecialidad.getItemCount(); i++) {
             if (cmbEspecialidad.getItemAt(i).equals(esp)) {
@@ -162,10 +164,7 @@ public class OdontologoPanel extends BaseFormPanel {
             JOptionPane.showMessageDialog(this, "Seleccione un odontólogo de la tabla.", "Aviso", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if (txtNombre.getText().trim().isEmpty() || txtApellido.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Nombre y apellido no pueden estar vacíos.", "Aviso", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+        if (!validarCampos()) return;   // mismas reglas que al agregar (la matrícula no se puede editar)
         try {
             controller.modificarOdontologo(matriculaSeleccionada, txtNombre.getText().trim(), txtApellido.getText().trim());
             cargarTabla(controller.listarOdontologos());
@@ -200,9 +199,9 @@ public class OdontologoPanel extends BaseFormPanel {
         boolean ok = true;
         resetBordes(txtNombre, txtApellido, txtMatricula);
 
-        if (txtNombre.getText().trim().isEmpty())           { marcarError(txtNombre);    ok = false; }
-        if (txtApellido.getText().trim().isEmpty())         { marcarError(txtApellido);  ok = false; }
-        if (!txtMatricula.getText().trim().matches("\\d+")) { marcarError(txtMatricula); ok = false; }
+        if (!controller.esNombreValido(txtNombre.getText().trim()))       { marcarError(txtNombre);    ok = false; }
+        if (!controller.esNombreValido(txtApellido.getText().trim()))     { marcarError(txtApellido);  ok = false; }
+        if (!controller.esMatriculaValida(txtMatricula.getText().trim())) { marcarError(txtMatricula); ok = false; }
 
         if (!ok)
             JOptionPane.showMessageDialog(this, "Complete correctamente los campos marcados en rojo.", "Campos inválidos", JOptionPane.WARNING_MESSAGE);
@@ -212,6 +211,7 @@ public class OdontologoPanel extends BaseFormPanel {
     private void limpiarFormulario() {
         txtNombre.setText(""); txtApellido.setText(""); txtMatricula.setText("");
         txtMatricula.setEditable(true);
+        cmbEspecialidad.setEnabled(true);
         cmbEspecialidad.setSelectedIndex(0);
         matriculaSeleccionada = null;
         resetBordes(txtNombre, txtApellido, txtMatricula);

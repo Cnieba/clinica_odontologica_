@@ -77,7 +77,7 @@ public class MainFrame extends JFrame {
         btnPacientes.addActionListener(e -> cardLayout.show(contenidoPanel, "PACIENTES"));
         btnOdontologos.addActionListener(e -> cardLayout.show(contenidoPanel, "ODONTOLOGOS"));
         btnTurnos.addActionListener(e -> {
-            turnoPanel.refrescarCombos();
+            turnoPanel.refrescar();
             cardLayout.show(contenidoPanel, "TURNOS");
         });
 

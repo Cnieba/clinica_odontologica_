@@ -2,8 +2,10 @@ package LogicaDeNegocio;
 
 import Entity.Domicilio;
 import Entity.Paciente;
+import Entity.Turno;
 import Excepciones.DatoInvalidoException;
 import Excepciones.PacienteNoEncontradoException;
+import Excepciones.TieneTurnosAsociadosException;
 import Persistencia.IRepositorio;
 
 import java.util.List;
@@ -12,28 +14,40 @@ import java.util.stream.Collectors;
 public class ServicioPaciente {
 
     private final IRepositorio<Paciente, String> repo;
+    private final IRepositorio<Turno, Integer> repoTurno;   // para saber si el paciente tiene turnos
 
-    public ServicioPaciente(IRepositorio<Paciente, String> repo) {
+    public ServicioPaciente(IRepositorio<Paciente, String> repo, IRepositorio<Turno, Integer> repoTurno) {
         this.repo = repo;
+        this.repoTurno = repoTurno;
     }
 
     public void registrarPaciente(Paciente p) {
         // Validaciones con DatoInvalidoException
         if (p.getDni() == null || p.getDni().isBlank())
             throw new DatoInvalidoException("DNI", "no puede estar vacío");
-        if (!p.getDni().matches("\\d{7,8}"))
+        if (!Validaciones.esDniValido(p.getDni()))
             throw new DatoInvalidoException("DNI", "debe contener entre 7 y 8 dígitos numéricos");
         validarDatosPersonales(p.getNombre(), p.getApellido(), p.getEmail());
         validarDomicilio(p.getDomicilio());
 
         if (repo.buscarPorId(p.getDni()) != null)
             throw new DatoInvalidoException("DNI", "ya existe un paciente con el DNI " + p.getDni());
+        p.asignarId();
         repo.guardar(p);
     }
 
     public void eliminarPaciente(String dni) {
         if (repo.buscarPorId(dni) == null)
             throw new PacienteNoEncontradoException(dni);
+
+        // No se permite la baja si el paciente tiene turnos (quedarían turnos sin paciente)
+        int cantidadTurnos = 0;
+        for (Turno t : repoTurno.listarTodos()) {
+            if (t.getPaciente().getDni().equals(dni)) cantidadTurnos++;
+        }
+        if (cantidadTurnos > 0)
+            throw new TieneTurnosAsociadosException("al paciente con DNI " + dni, cantidadTurnos);
+
         repo.eliminar(dni);
     }
 
@@ -56,10 +70,14 @@ public class ServicioPaciente {
     private void validarDatosPersonales(String nombre, String apellido, String email) {
         if (nombre == null || nombre.isBlank())
             throw new DatoInvalidoException("Nombre", "no puede estar vacío");
+        if (!Validaciones.esNombreValido(nombre))
+            throw new DatoInvalidoException("Nombre", "solo puede contener letras");
         if (apellido == null || apellido.isBlank())
             throw new DatoInvalidoException("Apellido", "no puede estar vacío");
-        if (email == null || !email.contains("@"))
-            throw new DatoInvalidoException("Email", "debe contener '@'");
+        if (!Validaciones.esNombreValido(apellido))
+            throw new DatoInvalidoException("Apellido", "solo puede contener letras");
+        if (!Validaciones.esEmailValido(email))
+            throw new DatoInvalidoException("Email", "debe tener un formato válido (ej. nombre@mail.com)");
     }
 
     private void validarDomicilio(Domicilio d) {
@@ -67,21 +85,15 @@ public class ServicioPaciente {
             throw new DatoInvalidoException("Domicilio", "es obligatorio");
         if (d.getCalle() == null || d.getCalle().isBlank())
             throw new DatoInvalidoException("Calle", "no puede estar vacía");
-        if (d.getNumero() == null || !d.getNumero().matches("\\d+"))
-            throw new DatoInvalidoException("Número", "solo puede contener números");
+        if (!Validaciones.esNumeroCalleValido(d.getNumero()))
+            throw new DatoInvalidoException("Número", "debe ser un número mayor a 0");
         if (d.getLocalidad() == null || d.getLocalidad().isBlank())
             throw new DatoInvalidoException("Localidad", "no puede estar vacía");
         if (d.getProvincia() == null || d.getProvincia().isBlank())
             throw new DatoInvalidoException("Provincia", "no puede estar vacía");
-        if (!esCodigoPostalValido(d.getCodigoPostal()))
+        if (!Validaciones.esCodigoPostalValido(d.getCodigoPostal()))
             throw new DatoInvalidoException("Código postal",
                     "debe tener 4 dígitos (ej. 1425) o formato CPA (ej. C1425ABC)");
-    }
-
-    /** CP viejo de 4 dígitos (1425) o CPA argentino: letra + 4 dígitos + 3 letras (C1425ABC). */
-    public static boolean esCodigoPostalValido(String cp) {
-        if (cp == null) return false;
-        return cp.matches("\\d{4}") || cp.matches("[A-Za-z]\\d{4}[A-Za-z]{3}");
     }
 
     /**

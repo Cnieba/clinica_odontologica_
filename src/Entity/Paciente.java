@@ -18,7 +18,6 @@ public class Paciente implements Serializable, Comparable<Paciente> {
     private Domicilio domicilio;
 
     public Paciente(String nombre, String apellido, String dni, String email, LocalDate fechaIngreso, Domicilio domicilio) {
-        this.id = ++contador;
         this.nombre = Objects.requireNonNull(nombre, "El nombre es obligatorio");
         this.apellido = Objects.requireNonNull(apellido, "El apellido es obligatorio");
         this.dni = Objects.requireNonNull(dni, "El DNI es obligatorio");
@@ -37,6 +36,11 @@ public class Paciente implements Serializable, Comparable<Paciente> {
 
     public static void sincronizarContador(int max) {
         if (max > contador) contador = max;
+    }
+
+    // El ID se asigna recién al guardarlo, así un alta rechazada no consume un número
+    public void asignarId() {
+        if (id == null) id = ++contador;
     }
 
     public Integer getId() { return id; }

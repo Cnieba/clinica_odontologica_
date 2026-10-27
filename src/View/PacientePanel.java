@@ -211,11 +211,7 @@ public class PacientePanel extends BaseFormPanel {
             JOptionPane.showMessageDialog(this, "Seleccione un paciente de la tabla.", "Aviso", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if (txtNombre.getText().trim().isEmpty() || txtApellido.getText().trim().isEmpty() || txtEmail.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Nombre, apellido y email no pueden estar vacíos.", "Aviso", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if (!validarCamposDomicilio()) return;
+        if (!validarCampos()) return;   // mismas reglas que al agregar (el DNI no se puede editar)
         try {
             controller.modificarPaciente(
                     dniSeleccionado,
@@ -272,21 +268,12 @@ public class PacientePanel extends BaseFormPanel {
         boolean ok = true;
         resetBordes(todosLosCampos());
 
-        if (txtNombre.getText().trim().isEmpty()) { marcarError(txtNombre); ok = false; }
-        if (txtApellido.getText().trim().isEmpty()) { marcarError(txtApellido); ok = false; }
-        if (!txtDni.getText().trim().matches("\\d{7,8}")) { marcarError(txtDni); ok = false; }
-        if (!txtEmail.getText().trim().contains("@")) { marcarError(txtEmail); ok = false; }
+        if (!controller.esNombreValido(txtNombre.getText().trim())) { marcarError(txtNombre); ok = false; }
+        if (!controller.esNombreValido(txtApellido.getText().trim())) { marcarError(txtApellido); ok = false; }
+        if (!controller.esDniValido(txtDni.getText().trim())) { marcarError(txtDni); ok = false; }
+        if (!controller.esEmailValido(txtEmail.getText().trim())) { marcarError(txtEmail); ok = false; }
         if (!marcarErroresDomicilio()) ok = false;
 
-        if (!ok)
-            JOptionPane.showMessageDialog(this, "Complete correctamente los campos marcados en rojo.", "Campos inválidos", JOptionPane.WARNING_MESSAGE);
-        return ok;
-    }
-
-    /** Se usa al modificar: solo revisa los campos de domicilio. */
-    private boolean validarCamposDomicilio() {
-        resetBordes(txtCalle, txtNumero, txtLocalidad, txtProvincia, txtCodigoPostal);
-        boolean ok = marcarErroresDomicilio();
         if (!ok)
             JOptionPane.showMessageDialog(this, "Complete correctamente los campos marcados en rojo.", "Campos inválidos", JOptionPane.WARNING_MESSAGE);
         return ok;
@@ -296,7 +283,7 @@ public class PacientePanel extends BaseFormPanel {
     private boolean marcarErroresDomicilio() {
         boolean ok = true;
         if (txtCalle.getText().trim().isEmpty()) { marcarError(txtCalle); ok = false; }
-        if (!txtNumero.getText().trim().matches("\\d+")) { marcarError(txtNumero); ok = false; }
+        if (!controller.esNumeroCalleValido(txtNumero.getText().trim())) { marcarError(txtNumero); ok = false; }
         if (txtLocalidad.getText().trim().isEmpty()) { marcarError(txtLocalidad); ok = false; }
         if (txtProvincia.getText().trim().isEmpty()) { marcarError(txtProvincia); ok = false; }
         if (!controller.esCodigoPostalValido(txtCodigoPostal.getText().trim())) { marcarError(txtCodigoPostal); ok = false; }

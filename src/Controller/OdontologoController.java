@@ -2,6 +2,7 @@ package Controller;
 
 import Entity.*;
 import LogicaDeNegocio.ServicioOdonto;
+import LogicaDeNegocio.Validaciones;
 
 import java.util.List;
 
@@ -40,5 +41,14 @@ public class OdontologoController {
 
     public List<Odontologo> listarOdontologos() {
         return servicio.listar();
+    }
+
+    // Reglas de formato para que la vista marque en rojo los campos inválidos
+    public boolean esNombreValido(String texto) {
+        return Validaciones.esNombreValido(texto);
+    }
+
+    public boolean esMatriculaValida(String matricula) {
+        return Validaciones.esMatriculaValida(matricula);
     }
 }

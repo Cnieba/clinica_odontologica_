@@ -7,6 +7,7 @@ import LogicaDeNegocio.ServicioTurno;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -16,6 +17,9 @@ import java.util.List;
  * DateTimeParseException para que la vista muestre el mismo mensaje de antes.
  */
 public class TurnoController {
+
+    // Acepta la hora con o sin cero adelante (9:00 o 09:00), sin segundos
+    private static final DateTimeFormatter FORMATO_HORA = DateTimeFormatter.ofPattern("H:mm");
 
     private final ServicioTurno servTur;
     private final ServicioPaciente servPac;
@@ -31,7 +35,7 @@ public class TurnoController {
         Paciente p = servPac.buscar(dniPaciente);
         Odontologo o = servOdo.buscar(matriculaOdontologo);
         LocalDate fecha = LocalDate.parse(fechaTexto);
-        LocalTime hora = LocalTime.parse(horaTexto);
+        LocalTime hora = LocalTime.parse(horaTexto, FORMATO_HORA);
 
         Turno t = new Turno(p, o, fecha, hora, EstadoTurno.PENDIENTE);
         servTur.crearTurno(t);
@@ -39,9 +43,13 @@ public class TurnoController {
 
     public void modificarTurno(Integer id, String fechaTexto, String horaTexto, EstadoTurno estado) {
         LocalDate fecha = LocalDate.parse(fechaTexto);
-        LocalTime hora = LocalTime.parse(horaTexto);
+        LocalTime hora = LocalTime.parse(horaTexto, FORMATO_HORA);
         servTur.actualizarTurno(id, fecha, hora);
         servTur.cambiarEstadoTurno(id, estado);
+    }
+
+    public Turno buscarTurno(Integer id) {
+        return servTur.buscar(id);
     }
 
     public void eliminarTurno(Integer id) {

@@ -13,7 +13,7 @@ import java.awt.event.MouseEvent;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 
-public class TurnoPanel extends JPanel {
+public class TurnoPanel extends BaseFormPanel {
 
     private TurnoController controller;
 
@@ -30,7 +30,9 @@ public class TurnoPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        add(crearPanelIzquierdo(), BorderLayout.WEST);
+        // Igual que Pacientes y Odontólogos: el formulario va dentro de un scroll
+        // para que se pueda bajar cuando la ventana es chica
+        add(enScrollPane(crearPanelIzquierdo(), 320), BorderLayout.WEST);
         add(crearTablaPanel(), BorderLayout.CENTER);
 
         refrescarCombos();
@@ -40,7 +42,6 @@ public class TurnoPanel extends JPanel {
     private JPanel crearPanelIzquierdo() {
         JPanel contenedor = new JPanel();
         contenedor.setLayout(new BoxLayout(contenedor, BoxLayout.Y_AXIS));
-        contenedor.setPreferredSize(new Dimension(300, 0));
 
         contenedor.add(crearFormularioTurno());
         contenedor.add(Box.createVerticalStrut(10));
@@ -176,6 +177,13 @@ public class TurnoPanel extends JPanel {
         return panel;
     }
 
+    /** Se llama al entrar a la pestaña Turnos: actualiza combos y tabla con los datos actuales. */
+    public void refrescar() {
+        refrescarCombos();
+        cargarTabla(controller.listarTurnos());
+        limpiarFormulario();
+    }
+
     public void refrescarCombos() {
         cmbPaciente.removeAllItems();
         for (Paciente p : controller.listarPacientes())
@@ -204,6 +212,19 @@ public class TurnoPanel extends JPanel {
 
     private void cargarEnFormulario(int fila) {
         idSeleccionado = (Integer) modelo.getValueAt(fila, 0);
+
+        // Los combos muestran el paciente y el odontólogo del turno, y se bloquean:
+        // al modificar solo se cambian fecha, hora y estado
+        try {
+            Turno t = controller.buscarTurno(idSeleccionado);
+            seleccionarEnCombo(cmbPaciente, t.getPaciente().getDni());
+            seleccionarEnCombo(cmbOdontologo, t.getOdontologo().getMatricula());
+        } catch (ClinicaException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        cmbPaciente.setEnabled(false);
+        cmbOdontologo.setEnabled(false);
+
         txtFecha.setForeground(Color.BLACK);
         txtFecha.setText(modelo.getValueAt(fila, 4).toString());
         txtHora.setForeground(Color.BLACK);
@@ -216,7 +237,23 @@ public class TurnoPanel extends JPanel {
         return !val.isEmpty() && !val.equals(placeholder);
     }
 
+    /** Selecciona el ítem del combo que empieza con la clave dada ("DNI - Nombre" o "Matrícula - Nombre"). */
+    private void seleccionarEnCombo(JComboBox<String> combo, String clave) {
+        for (int i = 0; i < combo.getItemCount(); i++) {
+            if (combo.getItemAt(i).startsWith(clave + " - ")) {
+                combo.setSelectedIndex(i);
+                return;
+            }
+        }
+    }
+
     private void crearTurno() {
+        if (idSeleccionado != null) {
+            JOptionPane.showMessageDialog(this,
+                    "Hay un turno seleccionado. Use 'Limpiar' para crear uno nuevo.",
+                    "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         if (cmbPaciente.getItemCount() == 0 || cmbOdontologo.getItemCount() == 0) {
             JOptionPane.showMessageDialog(this, "Debe haber al menos un paciente y un odontólogo registrados.", "Aviso", JOptionPane.WARNING_MESSAGE);
             return;
@@ -353,6 +390,8 @@ public class TurnoPanel extends JPanel {
         txtHora.setForeground(Color.GRAY);
         txtHora.setText("HH:MM");
         idSeleccionado = null;
+        cmbPaciente.setEnabled(true);
+        cmbOdontologo.setEnabled(true);
         tabla.clearSelection();
     }
 }

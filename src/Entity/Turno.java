@@ -16,8 +16,8 @@ public class Turno implements Serializable {
     private LocalTime hora;
     private EstadoTurno estadoTurno;
 
+    // El ID se asigna recién al guardar el turno (asignarId), así un turno rechazado no consume un número
     public Turno(Paciente paciente, Odontologo odontologo, LocalDate fecha, LocalTime hora, EstadoTurno estadoTurno) {
-        this.id = ++contador;
         this.paciente = Objects.requireNonNull(paciente, "El paciente es obligatorio");
         this.odontologo = Objects.requireNonNull(odontologo, "El odontólogo es obligatorio");
         this.fecha = Objects.requireNonNull(fecha, "La fecha es obligatoria");
@@ -27,6 +27,10 @@ public class Turno implements Serializable {
 
     public static void sincronizarContador(int max) {
         if (max > contador) contador = max;
+    }
+
+    public void asignarId() {
+        if (id == null) id = ++contador;
     }
 
     public Integer getId() { return id; }
@@ -41,6 +45,17 @@ public class Turno implements Serializable {
     public EstadoTurno getEstadoTurno() { return estadoTurno; }
     public void setEstadoTurno(EstadoTurno estadoTurno) { this.estadoTurno = estadoTurno; }
     public int getDuracion() { return odontologo.calcularDuracionTurno(); }
+
+    // Experto en información: el turno sabe a qué hora termina y si choca con otro horario
+    public LocalTime getHoraFin() { return hora.plusMinutes(getDuracion()); }
+
+    public boolean estaCancelado() { return estadoTurno == EstadoTurno.CANCELADO; }
+
+    /** true si este turno ocupa algún minuto del rango [otroInicio, otroFin) de esa fecha. */
+    public boolean seSuperponeCon(LocalDate otraFecha, LocalTime otroInicio, LocalTime otroFin) {
+        if (!fecha.equals(otraFecha)) return false;
+        return hora.isBefore(otroFin) && otroInicio.isBefore(getHoraFin());
+    }
 
     @Override
     public String toString() {

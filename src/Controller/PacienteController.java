@@ -3,6 +3,7 @@ package Controller;
 import Entity.Domicilio;
 import Entity.Paciente;
 import LogicaDeNegocio.ServicioPaciente;
+import LogicaDeNegocio.Validaciones;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -51,7 +52,24 @@ public class PacienteController {
         return servicio.buscarPorApellido(texto);
     }
 
+    // Reglas de formato para que la vista marque en rojo los campos inválidos
+    public boolean esNombreValido(String texto) {
+        return Validaciones.esNombreValido(texto);
+    }
+
+    public boolean esEmailValido(String email) {
+        return Validaciones.esEmailValido(email);
+    }
+
+    public boolean esDniValido(String dni) {
+        return Validaciones.esDniValido(dni);
+    }
+
+    public boolean esNumeroCalleValido(String numero) {
+        return Validaciones.esNumeroCalleValido(numero);
+    }
+
     public boolean esCodigoPostalValido(String cp) {
-        return ServicioPaciente.esCodigoPostalValido(cp);
+        return Validaciones.esCodigoPostalValido(cp);
     }
 }

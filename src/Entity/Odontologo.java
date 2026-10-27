@@ -10,7 +10,6 @@ public class Odontologo implements Serializable {
     private String nombre, apellido, matricula;
 
     public Odontologo(String nombre, String apellido, String matricula) {
-        this.id = ++contador;
         this.nombre = nombre;
         this.apellido = apellido;
         this.matricula = matricula;
@@ -18,6 +17,11 @@ public class Odontologo implements Serializable {
 
     public static void sincronizarContador(int max) {
         if (max > contador) contador = max;
+    }
+
+    // El ID se asigna recién al guardarlo, así un alta rechazada no consume un número
+    public void asignarId() {
+        if (id == null) id = ++contador;
     }
 
     public int getId() { return id; }
