@@ -3,6 +3,7 @@ package Entity;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Objects;
 
 public class Turno implements Serializable {
 
@@ -17,11 +18,11 @@ public class Turno implements Serializable {
 
     public Turno(Paciente paciente, Odontologo odontologo, LocalDate fecha, LocalTime hora, EstadoTurno estadoTurno) {
         this.id = ++contador;
-        this.paciente = paciente;
-        this.odontologo = odontologo;
-        this.fecha = fecha;
-        this.hora = hora;
-        this.estadoTurno = estadoTurno;
+        this.paciente = Objects.requireNonNull(paciente, "El paciente es obligatorio");
+        this.odontologo = Objects.requireNonNull(odontologo, "El odontólogo es obligatorio");
+        this.fecha = Objects.requireNonNull(fecha, "La fecha es obligatoria");
+        this.hora = Objects.requireNonNull(hora, "La hora es obligatoria");
+        this.estadoTurno = Objects.requireNonNull(estadoTurno, "El estado del turno es obligatorio");
     }
 
     public static void sincronizarContador(int max) {
