@@ -84,8 +84,19 @@ public class ServicioPaciente {
      * Filtra pacientes cuyo apellido contenga el texto dado (búsqueda parcial, sin distinguir mayúsculas).
      */
     public List<Paciente> buscarPorApellido(String fragmento) {
+        if (fragmento == null || fragmento.isBlank()) {
+            throw new DatoInvalidoException(
+                    "Apellido", "el texto de búsqueda no puede estar vacío");
+        }
+
+        String busqueda = fragmento.trim();
+
         return repo.listarTodos().stream()
-                .filter(p -> p.getApellido().toLowerCase().contains(fragmento.toLowerCase()))
+                .filter(p -> p.getApellido() != null
+                        && p.getApellido().toLowerCase(
+                                java.util.Locale.ROOT).contains(
+                                        busqueda.toLowerCase(
+                                                java.util.Locale.ROOT)))
                 .sorted()
                 .collect(Collectors.toList());
     }
