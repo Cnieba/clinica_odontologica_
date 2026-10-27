@@ -55,13 +55,14 @@ public class Paciente implements Serializable, Comparable<Paciente> {
 
     @Override
     public String toString() {
-        return "Paciente: " +
-                "ID: " + getId() +
-                ", Nombre: " + getNombre() + '\'' +
-                ", Apellido: " + getApellido() + '\'' +
-                ", DNI: " + getDni() + '\'' +
-                ", Email: " + getEmail() + '\'' +
-                ", Fecha de ingreso: " + getFechaIngreso() +
-                ", Domicilio: " + getDomicilio();
+        return "Paciente{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", dni='" + dni + '\'' +
+                ", email='" + email + '\'' +
+                ", fechaIngreso=" + fechaIngreso +
+                ", domicilio=" + domicilio +
+                '}';
     }
 }
